@@ -1,0 +1,46 @@
+/* import only the necessary Bootstrap files */
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+/* -------begin customization-------- */
+/* change the primary theme color to red */
+$theme-colors: (
+  primary: red;
+);
+/* -------end customization-------- */
+/* finally, import Bootstrap to set the changes! */
+@import "bootstrap";
+
+  .navbar {
+    padding: 16px 0px;
+  }
+
+  .navbar-brand {
+    padding: 0px;
+  }
+
+  .navbar-brand>img {
+    height: 100%;
+    padding: 7px 0px;
+    width: auto;
+  }
+
+  .navbar-brand {
+    height: 60px;
+  }
+
+  .nav>li>a {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .navbar-toggle {
+    padding: 10px;
+    margin: 25px 15px 25px 0;
+  }
+
+  @media only screen and (max-width : 768px) {
+
+    .navbar-brand>img {
+      padding: 13.25px 0px;
+    }
+  }
