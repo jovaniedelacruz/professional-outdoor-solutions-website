@@ -1,46 +1,214 @@
-/* import only the necessary Bootstrap files */
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
-/* -------begin customization-------- */
-/* change the primary theme color to red */
-$theme-colors: (
-  primary: red;
-);
-/* -------end customization-------- */
-/* finally, import Bootstrap to set the changes! */
-@import "bootstrap";
+.navbar {
+  padding: 16px 0;
+}
 
-  .navbar {
-    padding: 16px 0px;
+.navbar-brand {
+  padding: 0;
+}
+
+.navbar-brand > img {
+  height: 100%;
+  padding: 7px 0;
+  width: auto;
+}
+
+.navbar-brand {
+  height: 60px;
+}
+
+.nav > li > a {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.navbar-toggle {
+  padding: 10px;
+  margin: 25px 15px 25px 0;
+}
+@media only screen and (max-width : 768px) {
+  .navbar-brand > img {
+    padding: 13.25px 0;
   }
+}
+
+$bgDefault: #ffffff;
+$bgHighlight: #ffffff;
+$colDefault: #006738;
+$colHighlight: #39b54a;
+$dropDown: true;
+
+.navbar {
 
   .navbar-brand {
-    padding: 0px;
+    color: $colDefault;
+
+    &:focus,
+    &:hover {
+      color: $colHighlight;
+    }
   }
 
-  .navbar-brand>img {
-    height: 100%;
-    padding: 7px 0px;
-    width: auto;
+  .navbar-text {
+    color: $colDefault;
+
+    a {
+      color: $colHighlight;
+
+      &:focus,
+      &:hover {
+        color: $colHighlight;
+      }
+    }
   }
 
-  .navbar-brand {
-    height: 60px;
-  }
+  .navbar-nav {
+    .nav-link {
+      color: $colDefault;
+      border-radius: 0.25rem;
+      margin: 0 0.25em;
 
-  .nav>li>a {
-    padding-top: 30px;
-    padding-bottom: 30px;
+      &:not(.disabled) {
+        &:focus,
+        &:hover {
+          color: $colHighlight;
+        }
+      }
+    }
+    @if ($dropDown) {
+      .dropdown-menu {
+
+        .dropdown-item {
+          color: $colDefault;
+
+          &.active,
+          &:focus,
+          &:hover {
+            color: $colHighlight;
+            background-color: #ffffff;
+          }
+        }
+
+        .dropdown-divider {
+        }
+      }
+    }
+
+    .nav-item.active,
+    .nav-item.show {
+      .nav-link,
+      .nav-link:focus,
+      .nav-link:hover {
+        color: $colHighlight;
+      }
+    }
   }
 
   .navbar-toggle {
-    padding: 10px;
-    margin: 25px 15px 25px 0;
-  }
 
-  @media only screen and (max-width : 768px) {
+    &:focus,
+    &:hover {
+      background-color: $bgHighlight;
+    }
 
-    .navbar-brand>img {
-      padding: 13.25px 0px;
+    .navbar-toggler-icon {
+      color: $colDefault;
     }
   }
+
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $colDefault;
+  }
+
+  .navbar-link {
+    color: $colDefault;
+
+    &:hover {
+      color: $colHighlight;
+    }
+  }
+}
+@media (max-width: 575px) {
+  .navbar-expend-sm .navbar-nav .show .dropdown-menu {
+    .dropdown-item {
+      color: $colDefault;
+
+      &:focus,
+      &:hover {
+        color: $colHighlight;
+      }
+    }
+
+    .dropdown-item.active {
+      color: $colHighlight;
+      background-color: $bgHighlight;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .navbar-expend-md .navbar-nav .show .dropdown-menu {
+    .dropdown-item {
+      color: $colDefault;
+
+      &:focus,
+      &:hover {
+        color: $colHighlight;
+      }
+    }
+
+    .dropdown-item.active {
+      color: $colHighlight;
+      background-color: $bgHighlight;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .navbar-expend-lg .navbar-nav .show .dropdown-menu {
+    .dropdown-item {
+      color: $colDefault;
+
+      &:focus,
+      &:hover {
+        color: $colHighlight;
+      }
+    }
+
+    .dropdown-item.active {
+      color: $colHighlight;
+      background-color: $bgHighlight;
+    }
+  }
+}
+@media (max-width: 1199px) {
+  .navbar-expend-xl .navbar-nav .show .dropdown-menu {
+    .dropdown-item {
+      color: $colDefault;
+
+      &:focus,
+      &:hover {
+        color: $colHighlight;
+      }
+    }
+
+    .dropdown-item.active {
+      color: $colHighlight;
+      background-color: $bgHighlight;
+    }
+  }
+}
+
+.navbar-expend .navbar-nav .show .dropdown-menu {
+  .dropdown-item {
+    color: $colDefault;
+
+    &:focus,
+    &:hover {
+      color: $colHighlight;
+    }
+  }
+
+  .dropdown-item.active {
+    color: $colHighlight;
+    background-color: $bgHighlight;
+  }
+}
